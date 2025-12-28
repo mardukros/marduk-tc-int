@@ -1,0 +1,81 @@
+{
+  "marduk_commander": {
+    "version": "1.0.0",
+    "name": "Marduk Commander",
+    "description": "Natural Language File Management for Total Commander"
+  },
+  
+  "middleware": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "execution_mode": "adb",
+    "websocket_path": "/ws",
+    "api_prefix": "/api/v1"
+  },
+  
+  "total_commander": {
+    "package": "com.ghisler.android.TotalCommander",
+    "main_activity": "com.ghisler.android.TotalCommander.TotalCommander",
+    "default_storage": "/sdcard"
+  },
+  
+  "cognitive": {
+    "memory": {
+      "persistence_enabled": true,
+      "persistence_path": "~/.marduk_commander/state.json",
+      "max_episodic_entries": 1000,
+      "relevance_decay_rate": 0.01
+    },
+    "parser": {
+      "confidence_threshold": 0.5,
+      "max_alternatives": 3
+    },
+    "procedural": {
+      "learning_rate": 0.1,
+      "min_success_rate": 0.3
+    }
+  },
+  
+  "path_aliases": {
+    "downloads": "/sdcard/Download",
+    "documents": "/sdcard/Documents",
+    "pictures": "/sdcard/Pictures",
+    "photos": "/sdcard/DCIM",
+    "music": "/sdcard/Music",
+    "videos": "/sdcard/Movies",
+    "desktop": "/sdcard",
+    "home": "/sdcard",
+    "root": "/"
+  },
+  
+  "file_categories": {
+    "documents": [".pdf", ".doc", ".docx", ".txt", ".rtf", ".odt", ".xls", ".xlsx", ".ppt", ".pptx"],
+    "images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".svg", ".ico"],
+    "videos": [".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv", ".webm"],
+    "audio": [".mp3", ".wav", ".flac", ".aac", ".ogg", ".wma", ".m4a"],
+    "archives": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2"],
+    "code": [".py", ".js", ".ts", ".java", ".kt", ".c", ".cpp", ".h", ".html", ".css", ".json", ".xml"],
+    "executables": [".apk", ".exe", ".sh", ".bat"]
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "marduk_commander.log",
+    "max_size_mb": 10,
+    "backup_count": 3
+  },
+  
+  "adb": {
+    "path": "adb",
+    "timeout_seconds": 30,
+    "retry_count": 3,
+    "retry_delay_ms": 500
+  },
+  
+  "tasker": {
+    "enabled": false,
+    "profile_prefix": "TC_",
+    "http_port": 8765
+  }
+}
